@@ -1,0 +1,16 @@
+{
+  "total_transactions": 11,
+  "total_settlements": 10,
+  "clean_matches": 4,
+  "issues_found": 7,
+  "breakdown": {
+    "missing_settlement": 1,
+    "orphan_settlement": 1,
+    "amount_mismatch": 0,
+    "rounding_mismatch": 1,
+    "delayed_settlement": 1,
+    "duplicate_transaction": 1,
+    "duplicate_settlement": 1,
+    "orphan_refund": 1
+  }
+}
