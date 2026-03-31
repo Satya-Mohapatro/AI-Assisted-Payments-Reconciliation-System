@@ -6,7 +6,7 @@
 
 A robust, automated financial reconciliation module designed to match business transactions with bank settlements. Built with an intuitive **Streamlit** dashboard and a highly resilient **Pandas** backbone, the system efficiently detects anomalies, flags edge cases effortlessly, and provides a clear breakdown of potential financial discrepancies.
 
-## ✨ Features
+##  Features
 
 - **Automated Data Generation:** Built-in engine to generate synthetically complex datasets simulating real-world financial environments, inclusive of edge cases.
 - **Robust Reconciliation Logic:** Matches business transactions with bank/PSP credits and debits based on deterministic identifiers and thresholds.
@@ -14,7 +14,7 @@ A robust, automated financial reconciliation module designed to match business t
 - **Interactive Health Dashboard:** Simple, clean, and interactive user interface built with Streamlit for human-in-the-loop review.
 - **Synthetic Unit Testing:** Comprehensive suite of unit tests validating accuracy across perfect matches and nuanced mismatches.
 
-## 🔍 Handled Edge Cases
+##  Handled Edge Cases
 
 The discrepancy detection engine identifies various operational anomalies, such as:
 - **`MISSING_SETTLEMENT`**: Transaction recorded, but no corresponding settlement arrived.
@@ -25,13 +25,13 @@ The discrepancy detection engine identifies various operational anomalies, such 
 - **`DUPLICATE_TRANSACTION/SETTLEMENT`**: Multiple identical records found for the same underlying ID.
 - **`ORPHAN_REFUND`**: A refund was logged, but the original transaction wasn't found.
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 - **Frontend UI Framework:** [Streamlit](https://streamlit.io/)
 - **Data Processing Backend:** [Pandas](https://pandas.pydata.org/)
 - **Testing:** Python `unittest`
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -65,7 +65,7 @@ To execute the backend synthetic data logic and verify the core reconciliation t
 python reconciliation_system.py
 ```
 
-## 📂 Project Structure
+##  Project Structure
 
 ```text
 ├── app.py                     # Streamlit dashboard and UI logic
