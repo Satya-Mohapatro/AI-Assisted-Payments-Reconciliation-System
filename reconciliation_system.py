@@ -272,8 +272,8 @@ def detect_issues(
     def _count(tag: str) -> int:
         return sum(1 for r in issues if any(tag in i for i in r["issues"]))
 
-    total_txn   = int(merged["txn_id"].notna().sum())       # after dedup
-    total_set   = int(merged["settlement_id"].notna().sum())
+    total_txn   = txn_df["txn_id"].nunique()
+    total_set   = merged["settlement_id"].nunique()
 
     # Bug fix: clean_matches must be rows that have BOTH sides and appear in NO issues list.
     # Old formula (total_txn - len(issues)) was wrong: issues includes orphan settlement rows
@@ -542,12 +542,12 @@ if __name__ == "__main__":
     summary, detail_df = run_reconciliation(verbose=True)
 
     # Persist outputs
-    with open("/mnt/user-data/outputs/reconciliation_summary.json", "w") as f:
+    with open("reconciliation_summary.json", "w") as f:
         json.dump(summary, f, indent=2)
 
     if not detail_df.empty:
         detail_df.to_csv(
-            "/mnt/user-data/outputs/reconciliation_detail.csv", index=False
+            "reconciliation_detail.csv", index=False
         )
         print("\nOutputs saved:")
         print("  → reconciliation_summary.json")
